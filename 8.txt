@@ -1,0 +1,3 @@
+   p = mat + 1; é uma expressão válida, pois p é 1 ponteiro para inteiro que aponta para a primeira posição do vetor mat e caminha uma posição à frente.
+   As expressões p = mat++ e p = ++mat são inválidas, pois o vetor mat não pode ser incrementado ou decrementado.
+   Já a expressão x = (*mat)++ é válida, sim, pois, o operador ++ incrementa o conteúdo do vetor mat.

@@ -1,0 +1,33 @@
+/* Os resultados obtidos na questão anterior são compatíveis com os resultados obtidos nesta questão. */
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+
+int i;
+
+char x[4];
+for(i=0;i<3;i++){
+printf("%d\n",(x+i));
+}
+
+int y[4];
+for(i=0;i<3;i++){
+printf("%d\n",(y+i));
+}
+
+float z[4];
+for(i=0;i<3;i++){
+printf("%d\n",(z+i));
+}
+
+double w[4];
+for(i=0;i<3;i++){
+printf("%d\nz",(w+i));
+}
+
+return 0;
+}

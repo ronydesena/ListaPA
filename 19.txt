@@ -1,0 +1,107 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int multmat(int **mat1, int **mat2, int **mat3, int lin_1, int col_1, int col_2); 
+
+int main()
+{
+    int **mat1, **mat2, **mat3;
+    int i, j, lin_1, col_1, col_2;
+
+    printf("Digite o numero de linhas da primeira matriz: ");
+    scanf("%d", &lin_1);
+
+    printf("\nDigite o numero de colunas da primeira matriz: ");
+    scanf("%d", &col_1);
+
+
+    printf("\nDigite o numero de colunas da segunda matriz: ");
+    scanf("%d", &col_2);
+
+    mat1 = (int**)malloc(lin_1*sizeof(int*));
+    mat2 = (int**)malloc(lin_1*sizeof(int*));
+    mat3 = (int**)malloc(lin_1*sizeof(int*));
+    
+    for(i=0; i<lin_1; i++){
+            mat1[i]=(int*) malloc(col_1*sizeof(int));
+        }
+    for(i=0; i<lin_1; i++){
+            mat2[i]=(int*) malloc(col_2*sizeof(int));
+        }
+    for(i=0; i<lin_1; i++){
+            mat3[i]=(int*) malloc(col_2*sizeof(int));
+        }
+
+    srand(time(0));
+    for(i=0; i<lin_1; i++){
+        for(j=0; j<col_1; j++){
+            mat1[i][j] = rand()%10;
+        }
+    }
+    for(i=0; i<lin_1; i++){
+        for(j=0; j<col_2; j++){
+            mat2[i][j] = rand()%10;
+        }
+    }
+    system("clear");
+
+    multmat(mat1, mat2, mat3, lin_1, col_1, col_2);
+
+    printf("\nPrimeira matriz: ");
+    for(i=0; i<lin_1; i++){
+        printf("\n");
+        for(j=0; j<col_1; j++){
+            printf("  %d  ", mat1[i][j]);
+        }
+    }
+
+    printf("\n\nSegunda matriz: ");
+    for(i=0; i<lin_1; i++){
+        printf("\n");
+        for(j=0; j<col_2; j++){
+            printf("  %d  ", mat2[i][j]);
+        }
+    }
+
+    printf("\n\nMatriz multiplicada: ");
+    for(i=0; i<lin_1; i++){
+        printf("\n");
+        for(j=0; j<col_2; j++){
+            printf("  %d  ", mat3[i][j]);
+        }
+    }
+    printf("\n");
+
+        for(i=0;i<lin_1;i++){
+            free(mat1[i]);
+        }
+        for(i=0;i<lin_1;i++){
+            free(mat2[i]);
+        }
+        for(i=0;i<lin_1;i++){
+            free(mat3[i]);
+        }
+
+        free(mat1);
+        free(mat2);
+        free(mat3);
+
+        return 0;
+
+}
+
+int multmat(int **mat1, int **mat2, int **mat3, int lin_1, int col_1, int col_2){
+    int i, j, k;
+    int soma;
+
+    for(i=0; i<lin_1; i++){
+        for(j=0; j<col_2; j++){
+            soma=0;
+            for(k=0; k<col_1; k++){
+                soma += mat1[i][k]*mat2[k][j];
+            }
+            mat3[i][j] = soma;
+        }
+    }
+}

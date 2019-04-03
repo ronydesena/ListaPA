@@ -1,0 +1,4 @@
+	A aprendizagem dos ponteiros são de extrema importância quando uma variável tem que ser acessada em diferentes partes de um programa.
+Assim, o código pode ter vários ponteiros pelo programa, “apontando” para a variável que contém o valor desejado.
+Se esse dado for alterado, não haverá complicação alguma, pois todas as partes do programa tem um ponteiro que aponta para o endereço onde reside o dado alterado.
+	Existem várias situações em que os ponteiros são úteis, por exemplo:	Alocação dinâmica de memória, manipulação de arrays, para retornar mais de um valor em uma função etc.

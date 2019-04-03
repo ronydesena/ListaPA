@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+int somaVetor(int *vA, int *vB, int *vC, int n){
+   for(int i = 0; i < n; i++){
+       vC[i] = vA[i] + vB[i];
+   }
+}
+
+int main()
+{
+    int *vA, *vB, *vC;
+
+    int n;
+    printf("Digite o numero de elementos do vetor: ");
+    scanf("%d", &n);
+    printf("\n");
+
+    vA = (int*)malloc(n*sizeof(int));
+    vB = (int*)malloc(n*sizeof(int));
+    vC = (int*)malloc(n*sizeof(int));
+
+    for(int i = 0; i < n; i++){
+        printf("Digite os valores do vetor A: ");
+            scanf("%d", &vA[i]);
+    }
+
+    printf("\n");
+    printf("\n");
+    for(int i = 0; i < n; i++){
+        printf("Digite os valores do vetor B: ");
+            scanf("%d", &vB[i]);
+    }
+
+    somaVetor(vA, vB, vC, n);
+    printf("\n");
+
+    printf("Soma dos vetores A e B: ");
+    for(int i = 0; i < n; i++){
+        printf("%d ", vC[i]);
+    }
+
+    free(vA);
+    free(vB);
+    free(vC);
+
+    return 0;
+}

@@ -1,0 +1,6 @@
+   O primeiro programa exibe cada elemento do vetor, pois *(vet) retorna o valor da primeira posição e os increntos avançam uma posição seguinte, 
+como por exemplo, se somarmos um inteiro como *(vet + 1), teremos o valor da posição seguintes. Dessa forma, obtemos todos os elementos do vetor.
+
+
+   O segundo programa exibe primeiro o endereço de memória do primeiro elemento do vetor e os outros elementos é o valor desse endereço de memória + sizeof() bytes
+por unidade de tempo.

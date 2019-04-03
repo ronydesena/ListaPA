@@ -1,0 +1,14 @@
+/* Um ponteiro é uma variável que aponta para outra variável de um determinado tipo. Para indicar que uma variável é do tipo ponteiro, coloca-se um asterisco antes dela. */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+
+int x = 5;
+int *px = &x;
+
+printf("%d %ld", x, px);
+return 0;
+
+}

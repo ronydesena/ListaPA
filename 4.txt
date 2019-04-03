@@ -1,0 +1,4 @@
+As verdadeiras são:
+i = (*&)j;
+q = *p; 
+i = (*p)++ + *q;
